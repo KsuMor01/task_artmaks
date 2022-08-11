@@ -1,0 +1,5 @@
+config.txt
+user_info.db
+.idea
+__pycache__
+test.py
