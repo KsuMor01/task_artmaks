@@ -87,10 +87,12 @@ class ReviewsManager(object):
                 self.reviews.append(self.make_review(article))
         return self.reviews
 
+
 def search_for_vit_pages() -> list:
     search = SearchPage()
     vit_urls = search.get_search_urls()
     return vit_urls
+
 
 def get_new_vit_reviews(urls: list) -> list:
     reviews = ReviewsManager(urls)
