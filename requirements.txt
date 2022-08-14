@@ -1,0 +1,5 @@
+requests~=2.28.1
+python-dotenv~=0.20.0
+beautifulsoup4~=4.11.1
+aioschedule~=0.5.2
+aiogram~=2.21

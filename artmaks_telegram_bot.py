@@ -9,12 +9,10 @@ import aioschedule
 import reviews_parser
 import database_module
 
-with open('config.txt', 'r') as f:
-    lines = f.readlines()
+from config import TOKEN
 
-API_TOKEN = lines[1]
 
-bot = Bot(token=API_TOKEN, parse_mode=types.ParseMode.HTML)
+bot = Bot(token=TOKEN, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot)
 
 logging.basicConfig(level=logging.INFO)
