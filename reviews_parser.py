@@ -97,7 +97,7 @@ class ReviewsManager(object):
                 article_datetime = article.find("meta", attrs={'itemprop': "datePublished"}).get("content")  # str MSK
                 article_datetime = datetime.datetime.strptime(article_datetime, "%Y-%m-%dT%H:%M:%S+03:00")  # dt MSK
                 article_datetime = article_datetime - datetime.timedelta(hours=3)  # UTC +0
-                if (datetime.datetime.now() - article_datetime) < datetime.timedelta(days=40):
+                if (datetime.datetime.now() - article_datetime) < datetime.timedelta(days=1):
                     self.reviews.append(make_review(article))
                 else:
                     break

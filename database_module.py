@@ -44,7 +44,6 @@ def get_ids_from_db(id_type: str = 'users', table_path: str = __default_db_path)
     """
     conn = sqlite3.connect(table_path)
     cursor = conn.cursor()
-    print(id_type)
     if id_type == 'users':
         request = """SELECT id from users;"""
     else:

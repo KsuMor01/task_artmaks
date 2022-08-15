@@ -35,7 +35,7 @@ class IdTypes(enum.Enum):
 
 
 def get_ids(id_type: IdTypes):
-    for user_id in database_module.get_ids_from_db(id_type=id_type.value):
+    for user_id in database_module.get_ids_from_db(id_type=id_type.value[0]):
         yield user_id
 
 
@@ -81,7 +81,6 @@ async def scheduler():
     Sends the reviews to the users every day at 12:00
     :return:
     """
-    aioschedule.every(1).minutes.do(send_reviews)
     aioschedule.every(1).day.at("12:00").do(send_reviews)
     while True:
         await aioschedule.run_pending()
